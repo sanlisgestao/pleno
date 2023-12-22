@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <meta name='description' content='Website'>
+    <meta name='author' content='Angelita Santos'>
+    <meta name='keyWords' content='website'>
+    <meta name='robots' content='index, follow'>
+    <meta name='classification' content='site, website'>
+
+    <title></title>
+
+    <link rel='shortcut icon' href='../../static/img/logo.png' type='image/x-icon'>
+    <script src='../../static/painel/cdn/jquery-3.7.0.js'></script>
+    <link rel='stylesheet' href='../../static/painel/cdn/bootstrap-icons.css'>
+    <link rel='stylesheet' href='../../static/painel/css/painel.css'>
+    <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap.css'>
+    <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap-grid.css'>
+    <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap-reboot.css'>
+</head>
+
+<body class='container-fluid'>
+
+    <main class='mt-3 mb-5'>
+
+        <form action='' id='form-action' method='post' class='needs-validation' novalidate name='formulario'>
+
+            <section class='card'>
+
+                <header class='card-header text-center bg-success text-light'>
+                    <section class='row mt-3'>
+                        <div class='col-sm-1 mb-2'>
+                            <a class='navbar-brand' href='../painel/painel.html'>
+                                <img src='../../static/img/logo-pleno.png' width='60' height='30' alt=''>
+                            </a>
+                        </div>
+
+                        <div class='col-sm-10 mt-1 mb-2'>
+                            <h3 class=''>PLENO SERVIÇOS</h3>
+                        </div>
+
+                        <div class=''>
+                            <input type='hidden' class='form-control text-center' name='empresa' value='SERVICOS'>
+                        </div>
+                    </section>
+                </header>
+
+                <div class='card-body'>
+
+                    <div class='row text-center mb-3'>
+
+                        <div class='col-sm-9'></div>
+                        <div class='col-sm-1'>
+                            <button type='submit' class='btn btn-primary px-4 my-1' onclick='Validar()'>Salvar</button>
+                        </div>
+                        <div class='col-sm-2'>
+                            <a href='../../templates/read/list-servicos.html'>
+                                <button type='button' class='btn btn-danger px-4 my-1'>Cancelar
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <section class='row'>
+
+                        <div class='col-sm-3'>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Identificador</span>
+                                <input type='text' class='form-control text-center' id='inv_no' name='inv_no'
+                                    autocomplete='off' required>
+                                <div class='input-group-append'>
+                                    <button class='btn btn-outline-secondary' type='button'
+                                        onclick='SearchRegistros();'><i class='bi bi-search'></i></button>
+                                </div>
+                            </section>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Data</span>
+                                <input type='date' class='form-control text-center' name='data_registro'>
+                            </section>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Status Reg</span>
+                                <select class='form-control text-center status_registro' name='status_registro'
+                                    id='dropdownStatusRegistro'></select>
+                            </section>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Analista</span>
+                                <input type='hidden' class='form-control' name='id_vendedor' value='1'>
+                                <input autocomplete='off' type='text' class='form-control text-center' name='analista'
+                                    list='datalistAnalistas' value='SEM ANALISTA'>
+                                <datalist id='datalistAnalistas'></datalist>
+                            </section>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Conta</span>
+                                <input type='hidden' class='form-control' name='id_conta' value='1'>
+                                <input autocomplete='off' type='text' class='form-control text-center' name='conta'
+                                    list='datalistContas' value='IMPORTACAO'>
+                                <datalist id='datalistContas'></datalist>
+                            </section>
+
+                            <section class='input-group mb-1'>
+                                <span class='input-group-text'>Tipo Conta</span>
+                                <input autocomplete='off' type='text' class='form-control text-center' name='tipo_conta'
+                                    list='datalistTiposConta' value='DESEMBARAÇO'>
+                                <datalist id='datalistTiposConta'></datalist>
+                            </section>
+
+                        </div>
+
+                        <div class='col-sm-9'>
+
+                            <section class='row'>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Ref. Completa</span>
+                                        <input type='text' class='form-control text-center' name='ref_completa'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Ref. Pleno</span>
+                                        <input type='text' class='form-control text-center' name='ref_pleno'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Ref. Siscomex</span>
+                                        <input type='text' class='form-control text-center' name='ref_siscomex'>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class='row'>
+                                <div class='col-sm-5'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Nome Cliente</span>
+                                        <input type='text' class='form-control text-center' name='nome_cliente'>
+                                        <button class='btn btn-outline-secondary' type='button'
+                                            onclick='SearchRegistros();'><i class='bi bi-search'></i></button>
+                                    </div>
+                                </div>
+                                <div class='col-sm-7'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Ref. Cliente</span>
+                                        <input type='text' class='form-control text-center' name='ref_cliente'>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class='row'>
+                                <div class='col-sm-12'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Observação</span>
+                                        <input type='text' class='form-control' name='observacao'>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class='row'>
+                                <div class='col-sm-3'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>NF 1</span>
+                                        <input type='text' class='form-control text-center' name='nf_1'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-3'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>NF 2</span>
+                                        <input type='text' class='form-control text-center' name='nf_2'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-3'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>NF 3</span>
+                                        <input type='text' class='form-control text-center' name='nf_3'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-3'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>NF 4</span>
+                                        <input type='text' class='form-control text-center' name='nf_4'>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class='row'>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Data Envio</span>
+                                        <input type='date' class='form-control text-center' name='data_envio'>
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Data Vencto</span>
+                                        <input type='date' class='form-control text-center' name='data_vencto'>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class='row'>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Total R$</span>
+                                        <input type='text' class='form-control text-center' id='RegTotal'
+                                            name='reg_total' disabled>
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Situação Pgto</span>
+                                        <select class='form-control text-center status_pgto' name='status_pgto'
+                                            id='dropdownStatusPgto'></select>
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>Data Quitação</span>
+                                        <input type='date' class='form-control text-center' name='data_quitacao'>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+
+                    </section>
+
+                    <input type='hidden' name='IsNew' id='IsNew' value='Y'>
+                    <input type='hidden' name='StartRow' id='StartRow' value='0'>
+                    <input type='hidden' name='RowCount' id='RowCount' value='0'>
+
+                    <table class='table table-sm table-responsive-sm table-bordered mt-4'>
+                        <col class=m01>
+                        <col class=m02>
+                        <col class=m03>
+                        <col class=m04>
+                        <col class=m05>
+                        <thead class='table-dark'>
+                            <tr>
+                                <th scope='col' class='text-center'>Seq</th>
+                                <th scope='col' class='text-center'>Numero NF</th>
+                                <th scope='col' class='text-center'>Serviço</th>
+                                <th scope='col' class='text-center'>Valor NF</th>
+                                <th scope='col' class='no-print'>
+                                    <button type='button' class='btn btn-sm btn-warning' onclick='BtnAdd();'>+</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id='TBody'>
+                            <tr id='TRow' class='d-none'>
+                                <th scope='row' class='text-center'></th>
+                                <td><input type='text' class='form-control text-center table-width-qty' name='num_nf'
+                                        autocomplete='off'></td>
+                                <td>
+                                    <input type='text' class='form-control table-width-text' name='servico'
+                                        list='datalistPriceValues' autocomplete='off' required>
+                                    <datalist id='datalistPriceValues'></datalist>
+                                </td>
+                                <td><input type='number' class='form-control text-right table-width-qty' name='qty'
+                                        min='1'>
+                                </td>
+                                <td class='no-print'><button type='button' class='btn btn-sm btn-danger'
+                                        onclick='BtnDel(this);'>X</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </form>
+
+        <section id='nav-breadcrumb-cadastros'></section>
+
+    </main>
+
+    <section>
+        <div id='modal-ListaRegistros'></div>
+        <div id='modal-ListaParceiros'></div>
+    </section>
+
+    <script src='https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js'></script>
+    <script src='../../static/painel/js/firebase-init.js'></script>
+    <script src='../../static/painel/js/auth-guard.js'></script>
+
+    <script type='text/javascript' src='../../static/painel/js/load.js'></script>
+    <script type='text/javascript' src='../../static/painel/js/global/versao_title.js'></script>
+
+    <script type='text/javascript' src='../../static/painel/js/modules/register-action.js'></script>
+    <script type='text/javascript' src='../../static/painel/js/modules/data-listas-fill.js'></script>
+    <script type='text/javascript' src='../../static/painel/js/modules/show-data-reg-servicos.js'></script>
+    <!--
+    <script type='text/javascript' src='../../static/js/modules/show-data-cad-itens.js'></script>
+    -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'
+        integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
+        crossorigin='anonymous'></script>
+    <script type='text/javascript' src='../../static/painel/bootstrap/js/bootstrap.js'></script>
+    <script type='text/javascript' src='../../static/painel/bootstrap/js/bootstrap.bundle.js'></script>
+
+</body>
+
+</html>

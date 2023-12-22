@@ -1,0 +1,64 @@
+.row {
+    flex-wrap: wrap;
+}
+
+.card, .card-panel {
+    padding: 20px 10px 20px 10px;
+    margin: 20px;   
+}
+
+.card, .card-panel {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    transition: all 0.3s ease-out;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0 0 calc(0.5rem - 1px) calc(0.5rem - 1px);
+}
+
+.card:hover, .card-panel:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+   
+.card p, .card-panel p {
+    color: var(--preto);
+    font-size: 16px;
+    font-weight: 500;
+}
+   
+.image {
+    float: right;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.blue {
+    border-left: 3px solid var(--color-blue);
+}
+   
+.green {
+    border-left: 3px solid var(--color-green);
+}
+   
+.red {
+    border-left: 3px solid var(--color-red);
+}

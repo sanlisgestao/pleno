@@ -7,9 +7,9 @@ $(document).ready(function () {
 });
 
 
-const Cadastros = "AKfycbwOGyHgeGT0UU689aeIObb4FdT8sHmNz7mSQW0_ySzZP_cWOwwClq69_Q3MApnzbMIM";
+const Cadastros = "AKfycbyrEP-mTLSzdhQaVWLcYInvcxUoXIEOeh7SLaapEldsfnnQEUVX8FWQnhnczYyjIdtk";
 // script file sig-cad-itens
-var linkAction = 'https://script.google.com/macros/s/AKfycbwOGyHgeGT0UU689aeIObb4FdT8sHmNz7mSQW0_ySzZP_cWOwwClq69_Q3MApnzbMIM/exec';
+var linkAction = 'https://script.google.com/macros/s/AKfycbyrEP-mTLSzdhQaVWLcYInvcxUoXIEOeh7SLaapEldsfnnQEUVX8FWQnhnczYyjIdtk/exec';
 var linkFormAction = document.querySelector("#form-action");
 linkFormAction.setAttribute("action", linkAction);
 

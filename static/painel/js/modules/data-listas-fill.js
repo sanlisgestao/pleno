@@ -31,7 +31,8 @@ $(document).ready(function () {
     dropdownRota();
     dropdownContaContabil();
 
-    FillDataListItens()
+    FillDataListItens();
+    FillDataListAnalistas();
 
 });
 
@@ -42,9 +43,14 @@ const GoogleListas = "AKfycbygfP_TZMELJEOtW17VayQDydNX6ltyPZX4jSy9sO_vAAGjtkSRsp
 // https://script.google.com/macros/s/AKfycbygfP_TZMELJEOtW17VayQDydNX6ltyPZX4jSy9sO_vAAGjtkSRspEpC8DD-3af6PN_iQ/exec
 
 
-const GoogleCadastros = "AKfycbwOGyHgeGT0UU689aeIObb4FdT8sHmNz7mSQW0_ySzZP_cWOwwClq69_Q3MApnzbMIM";
+const GoogleCadastros = "AKfycbyrEP-mTLSzdhQaVWLcYInvcxUoXIEOeh7SLaapEldsfnnQEUVX8FWQnhnczYyjIdtk";
 // script file sig-cad-itens
-// https://script.google.com/macros/s/AKfycbwOGyHgeGT0UU689aeIObb4FdT8sHmNz7mSQW0_ySzZP_cWOwwClq69_Q3MApnzbMIM/exec
+// https://script.google.com/macros/s/AKfycbyrEP-mTLSzdhQaVWLcYInvcxUoXIEOeh7SLaapEldsfnnQEUVX8FWQnhnczYyjIdtk/exec
+
+
+const GoogleAnalistas = "AKfycbyPrRa-YlzsHQzTNN-W93Kk0wIaahrtLbyGO4RhnWD-fpEMH7eGybRkML2rVAiECZEaEg";
+// script file sig-cad-analistas
+// https://script.google.com/macros/s/AKfycbyrEP-mTLSzdhQaVWLcYInvcxUoXIEOeh7SLaapEldsfnnQEUVX8FWQnhnczYyjIdtk/exec
 
 
 function FillDataListItens() {
@@ -55,6 +61,17 @@ function FillDataListItens() {
                 Options = Options + '<option>' + value + '</option>';
             });
             $("#datalistItens").append(Options);
+        });
+}
+
+function FillDataListAnalistas() {
+    $.getJSON("https://script.google.com/macros/s/" + GoogleAnalistas + "/exec?page=dropdownAnalistas",
+        function (data) {
+            var Options = "";
+            $.each(data, function (key, value) {
+                Options = Options + '<option>' + value + '</option>';
+            });
+            $("#datalistAnalistas").append(Options);
         });
 }
 

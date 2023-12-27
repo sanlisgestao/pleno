@@ -15,9 +15,9 @@ const Cadastros = "AKfycbzcw9SZk3k0pEQZ04jm9bFhG12fct2qi_Szvdk5B5yYAbv5coMzCe9bg
 // script file sig-listas
 // https://script.google.com/macros/s/AKfycbzcw9SZk3k0pEQZ04jm9bFhG12fct2qi_Szvdk5B5yYAbv5coMzCe9bgylO1__ljK3i/exec
 
-const Vendedores = "AKfycbwW9vfeQ0ShSivB1eXJU3GstkzTgPh1d_hW6Jest5aaUoDReoegLNIAMd3wGCjBJx6F";
-// script file sig-cad-vendedores
-var linkAction = 'https://script.google.com/macros/s/AKfycbwW9vfeQ0ShSivB1eXJU3GstkzTgPh1d_hW6Jest5aaUoDReoegLNIAMd3wGCjBJx6F/exec';
+const Analistas = "AKfycbyPrRa-YlzsHQzTNN-W93Kk0wIaahrtLbyGO4RhnWD-fpEMH7eGybRkML2rVAiECZEaEg";
+// script file sig-cad-analistas
+var linkAction = 'https://script.google.com/macros/s/AKfycbyPrRa-YlzsHQzTNN-W93Kk0wIaahrtLbyGO4RhnWD-fpEMH7eGybRkML2rVAiECZEaEg/exec';
 var linkFormAction = document.querySelector("#form-action");
 linkFormAction.setAttribute("action", linkAction);
 
@@ -113,14 +113,14 @@ function showDataRota() {
 // ****************************************************************************************************
 
 function maxVendedores() {
-    $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=max",
+    $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=max",
         function (data) {
             $("input[name='cod_vendedor']").val(data);
         });
 }
 
 function dropdownVendedores() {
-    $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=dropdownVendedores",
+    $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=dropdownVendedores",
         function (data) {
             var Options = "";
             $.each(data, function (key, value) {
@@ -134,7 +134,7 @@ function SearchEdit(pNo = "") {
     var no = $('#id_item').val();
     if (pNo != "") no = pNo;
 
-    $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=search&no=" + no,
+    $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=search&no=" + no,
         function (data) {
             if (data == "NOT FOUND") {
                 alert('Número Não Encontrado!!!');
@@ -188,7 +188,7 @@ function SearchEdit(pNo = "") {
 
 function showDataEdit() {
     $(document).ready(function () {
-        $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=showDataVendedores",
+        $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=showDataVendedores",
             function (data) {
                 var Table = "", Rows = "", Columns = "";
                 $.each(data, function (key, value) {
@@ -208,7 +208,7 @@ function showDataEdit() {
 
 function showDataAllVendedores() {
     $(document).ready(function () {
-        $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=showDataComissao",
+        $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=showDataComissao",
             function (data) {
                 var Table = "", Rows = "", Columns = "";
                 $.each(data, function (key, value) {
@@ -227,7 +227,7 @@ function showDataAllVendedores() {
 
 function showDataAllVendedoresRota() {
     $(document).ready(function () {
-        $.getJSON("https://script.google.com/macros/s/" + Vendedores + "/exec?page=showDataRota",
+        $.getJSON("https://script.google.com/macros/s/" + Analistas + "/exec?page=showDataRota",
             function (data) {
                 var Table = "", Rows = "", Columns = "";
                 $.each(data, function (key, value) {

@@ -44,11 +44,11 @@ function SetCurrentDate() {
 
     let CurrDate = y + '-' + m + '-' + d;
 
-    $('input[name="dt_reg"]').val(CurrDate);
-    $('input[name="griffe_dt_inic"]').val(CurrDate);
-    $('input[name="griffe_dt_term"]').val(CurrDate);
-    $('input[name="tabpreco_dt_inic"]').val(CurrDate);
-    $('input[name="tabpreco_dt_term"]').val(CurrDate);
+    // $('input[name="dt_reg"]').val(CurrDate);
+    $('input[name="data_registro"]').val(CurrDate);
+    // $('input[name="data_envio"]').val(CurrDate);
+    // $('input[name="data_vencto"]').val(CurrDate);
+    // $('input[name="data_quitacao"]').val(CurrDate);
 }
 
 

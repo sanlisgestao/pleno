@@ -94,7 +94,7 @@
                                 <span class='input-group-text'>Analista</span>
                                 <input type='hidden' class='form-control' name='id_vendedor' value='1'>
                                 <input autocomplete='off' type='text' class='form-control text-center' name='analista'
-                                    list='datalistAnalistas' value='SEM ANALISTA'>
+                                    list='datalistAnalistas'>
                                 <datalist id='datalistAnalistas'></datalist>
                             </section>
 
@@ -127,7 +127,7 @@
                                 <div class='col-sm-4'>
                                     <div class='input-group mb-1'>
                                         <span class='input-group-text'>Ref. Pleno</span>
-                                        <input type='text' class='form-control text-center' name='ref_pleno'>
+                                        <input type='text' class='form-control text-center' name='sigla_pleno'>
                                     </div>
                                 </div>
                                 <div class='col-sm-4'>
@@ -164,6 +164,14 @@
                                 </div>
                             </section>
 
+                            <input type='hidden' class='form-control text-center' name='pref_1'>
+                            <input type='hidden' class='form-control text-center' name='pref_2'>
+                            <input type='hidden' class='form-control text-center' name='pref_3'>
+                            <input type='hidden' class='form-control text-center' name='pref_4'>
+                            <input type='hidden' class='form-control text-center' name='cnpj'>
+                            <input type='hidden' class='form-control text-center' name='razao_social'>
+                            <input type='hidden' class='form-control text-center' name='cod_parceiro'>
+
                             <section class='row'>
                                 <div class='col-sm-3'>
                                     <div class='input-group mb-1'>
@@ -192,12 +200,19 @@
                             </section>
 
                             <section class='row'>
+                                <div class='col-sm-3'>
+                                    <div class='input-group mb-1'>
+                                        <span class='input-group-text'>NF 5</span>
+                                        <input type='text' class='form-control text-center' name='nf_5'>
+                                    </div>
+                                </div>
                                 <div class='col-sm-4'>
                                     <div class='input-group mb-1'>
                                         <span class='input-group-text'>Data Envio</span>
                                         <input type='date' class='form-control text-center' name='data_envio'>
                                     </div>
                                 </div>
+                                <div class="col-sm-1"></div>
                                 <div class='col-sm-4'>
                                     <div class='input-group mb-1'>
                                         <span class='input-group-text'>Data Vencto</span>
@@ -259,6 +274,8 @@
                                 <th scope='row' class='text-center'></th>
                                 <td><input type='text' class='form-control text-center table-width-qty' name='num_nf'
                                         autocomplete='off'></td>
+                                <input type='hidden' class='form-control text-center' name='cod_item'>
+                                <input type='hidden' class='form-control text-center' name='qtd_item'>
                                 <td>
                                     <input type='text' class='form-control table-width-text' name='servico'
                                         list='datalistItens' autocomplete='off' required>

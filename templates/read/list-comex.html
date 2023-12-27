@@ -21,6 +21,7 @@
     <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap.css'>
     <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap-grid.css'>
     <link rel='stylesheet' href='../../static/painel/bootstrap/css/bootstrap-reboot.css'>
+    <base target="_top">
 </head>
 
 <body class='container-fluid'>
@@ -42,36 +43,83 @@
 
         <section id='nav-breadcrumb-registros'></section>
 
-        <section class='card-body'>
+        <div class='row mb-3'>
 
-            <div class='row mb-3'>
-
-                <div class='col-sm-4 input-group mb-2'>
-                    <span class='input-group-text'>Número</span>
-                    <input type='text' class='form-control text-center' id='' name='' placeholder='Digite o numero'
-                        autocomplete='off' required>
-                    <div class='input-group-append'>
-                        <button class='btn btn-outline-secondary' type='button' onclick='SearchRegistros();'><i
-                                class='bi bi-search'></i></button>
-                    </div>
-                </div>
-
-                <div class='col-sm-6'></div>
-
-                <div class='col-sm-2'>
-                    <form action='' id='form-action' class='form-inline my-1 my-lg-0'>
-                        <a href='../../templates/create/add-comex.html' class='btn btn-success'>Adicionar Novo</a>
-                    </form>
-                </div>
-
+            <div class='col-sm-2 input-group mb-2'>
+                <label id="LabelAno">Ano</label>
+                <select id="ListaAno" class="browser-default">
+                    <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                </select>
             </div>
 
-            <table id='bodymargem' class='table table-sm table-responsive table-hover'>
-                <tbody id='TBodyGeral'>
+            <div class='col-sm-3'>
+                <label id="LabelMes">Mês</label>
+                <select id="ListaMes" class="browser-default">
+                    <option value="" disabled selected>Escolha um mês</option>
+                    <option>JANEIRO</option>
+                    <option>FEVEREIRO</option>
+                    <option>MARÇO</option>
+                    <option>ABRIL</option>
+                    <option>MAIO</option>
+                    <option>JUNHO</option>
+                    <option>JULHO</option>
+                    <option>AGOSTO</option>
+                    <option>SETEMBRO</option>
+                    <option>OUTUBRO</option>
+                    <option>NOVEMBRO</option>
+                    <option>DEZEMBRO</option>
+                </select>
+            </div>
+
+            <div class='col-sm-3'>
+                <div class='input-group-append'>
+                    <a href='https://script.google.com/macros/s/AKfycbzpExWO5-olyCq8VZ2geeIb4C8OJldu088U8r9YRpxn/dev' class='btn btn-success'>Pesquisar</a>
+                </div>
+            </div>
+
+            <div class='col-sm-2'>
+                <button id="btnexportar" style="width: 100px; height: 25px">EXPORTAR</button>
+            </div>
+
+            <div class='col-sm-2'>
+                <form action='' id='form-action' class='form-inline my-1 my-lg-0'>
+                    <a href='../../templates/create/add-comex.html' class='btn btn-success'>Adicionar Novo</a>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="Componentes"></div>
+        <div id="CaixaMensagem">
+
+            <div>
+                <div id="TituloMsg"></div>
+                <div id="CorpoMsg"></div>
+                <div id="RodapeMsg"></div>
+            </div>
+        </div>
+
+
+        <div id="divTabela">
+            <table class="table table-sm table-responsive table-striped" id="Tab" width="95%" border="1"
+                cellpadding="1px">
+                <tbody id="CorpoTabela" class="text-center">
                 </tbody>
             </table>
 
-        </section>
+        </div>
 
         <section id='nav-breadcrumb-cadastros'></section>
 
@@ -86,7 +134,6 @@
     <script type='text/javascript' src='../../static/painel/js/global/versao_title.js'></script>
 
     <script type='text/javascript' src='../../static/painel/js/modules/show-data-reg-comex.js'></script>
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'
         integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
         crossorigin='anonymous'></script>

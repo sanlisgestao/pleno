@@ -5,9 +5,9 @@ $(document).ready(function () {
 
 
 
-const GoogleRegistros = 'AKfycbzahZx073h3BZwbVJSDxiZQrAE1NfwOkzpHEfX3ZHr-aILUS0H7UIwDpgFUMx4X2oBtgg';
+const GoogleRegistros = 'AKfycbwHYuCyZQ1eeg_2pUP2wfTM4t3C26MqzpQLmUEuXTaMaDOogmwnmVFoY0J9D38PtgzLXQ';
 // script file sig-reg-vendas
-var linkAction = 'https://script.google.com/macros/s/AKfycbzahZx073h3BZwbVJSDxiZQrAE1NfwOkzpHEfX3ZHr-aILUS0H7UIwDpgFUMx4X2oBtgg/exec';
+var linkAction = 'https://script.google.com/macros/s/AKfycbwHYuCyZQ1eeg_2pUP2wfTM4t3C26MqzpQLmUEuXTaMaDOogmwnmVFoY0J9D38PtgzLXQ/exec';
 var linkFormAction = document.querySelector('#form-action');
 linkFormAction.setAttribute('action', linkAction);
 
